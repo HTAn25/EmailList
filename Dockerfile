@@ -4,9 +4,5 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 
 COPY EmailList.war /usr/local/tomcat/webapps/ROOT.war
 
-ENV PORT=8080
-
-RUN sed -i 's/port="8080"/port="${PORT}"/' /usr/local/tomcat/conf/server.xml
-
-EXPOSE $PORT
+EXPOSE 8080
 CMD ["catalina.sh", "run"]
